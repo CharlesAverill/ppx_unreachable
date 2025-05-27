@@ -1,23 +1,23 @@
 (lang dune 3.9)
 
-(name PROJECT_NAME_)
+(name ppx_unreachable)
 
 (generate_opam_files true)
 
 (source
- (github _AUTHOR_USERNAME_/PROJECT_NAME_))
+ (github CharlesAverill/ppx_unreachable))
 
-(authors "_AUTHOR_NAME_")
+(authors "Charles Averill")
 
-(maintainers "_AUTHOR_NAME_")
+(maintainers "Charles Averill")
 
-(license _SPX_LICENSE_)
+(license MIT)
 
-(documentation https://github.com/_AUTHOR_USERNAME_/PROJECT_NAME_)
+(documentation https://github.com/CharlesAverill/ppx_unreachable)
 
 (package
- (name PROJECT_NAME_)
- (synopsis "_PROJECT_SYNOPSIS_")
- (description "_PROJECT_DESCRIPTION_")
- (depends ocaml dune alcotest ocamlformat odoc))
+ (name ppx_unreachable)
+ (synopsis "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
+ (description "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
+ (depends ocaml (dune :with-test) (alcotest :with-test) (ocamlformat :with-test) ppxlib))
 
