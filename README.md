@@ -15,5 +15,5 @@ let test_if x =
   else
     [%unreachable]
 
-let () = test_if 5 (* errors *)
+let () = test_if 5 (* unreachable branch hit - test.ml:7 *)
 ```

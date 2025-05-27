@@ -4,8 +4,11 @@ open Ast_builder.Default
 (* Expand [%unreachable] into a runtime failure *)
 let expand_unreachable ~loc ~path =
   let filename = loc.loc_start.pos_fname in
+  let line_num = loc.loc_start.pos_lnum in
   [%expr
-    failwith ("unreachable branch hit in file " ^ [%e estring ~loc filename])]
+    failwith
+      ( "unreachable branch hit - " ^ [%e estring ~loc filename] ^ ":"
+      ^ string_of_int [%e eint ~loc line_num] )]
 
 let unreachable_extension =
   Extension.declare "unreachable" Extension.Context.expression
