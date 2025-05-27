@@ -1,5 +1,5 @@
 (test
  (name test)
- (libraries alcotest ppx_unreachable)
+ (libraries ppx_unreachable)
  (preprocess
   (pps ppx_unreachable)))

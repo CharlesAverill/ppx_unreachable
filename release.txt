@@ -1,0 +1,4 @@
+add version number and changes to CHANGES.md
+commit all changes
+git tag -a <version number>
+dune-release bistro

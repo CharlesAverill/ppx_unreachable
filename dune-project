@@ -19,5 +19,8 @@
  (name ppx_unreachable)
  (synopsis "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
  (description "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
- (depends ocaml (dune :with-test) (alcotest :with-test) (ocamlformat :with-test) (dune-release :with-test) ppxlib))
+ (depends 
+	ocaml 
+	dune 
+	(ppxlib (>= 0.36))))
 
