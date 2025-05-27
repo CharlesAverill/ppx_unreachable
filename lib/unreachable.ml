@@ -2,7 +2,10 @@ open Ppxlib
 open Ast_builder.Default
 
 (* Expand [%unreachable] into a runtime failure *)
-let expand_unreachable ~loc ~path = [%expr failwith "unreachable branch hit"]
+let expand_unreachable ~loc ~path =
+  let filename = loc.loc_start.pos_fname in
+  [%expr
+    failwith ("unreachable branch hit in file " ^ [%e estring ~loc filename])]
 
 let unreachable_extension =
   Extension.declare "unreachable" Extension.Context.expression

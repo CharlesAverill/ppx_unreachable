@@ -11,10 +11,10 @@ let test_match x = match x with [] -> 0 | [1] -> 1 | _ -> [%unreachable]
 let () =
   ignore (test_if 11) ;
   ignore (test_if (-1)) ;
-  try ignore (test_if 5) with Failure _ -> print_endline "test_if pass"
+  try ignore (test_if 5) with Failure s -> print_endline ("test_if pass: " ^ s)
 
 let () =
   ignore (test_match []) ;
   ignore (test_match [1]) ;
   try ignore (test_match [1; 2; 3])
-  with Failure _ -> print_endline "test_match pass"
+  with Failure s -> print_endline ("test_match pass: " ^ s)
