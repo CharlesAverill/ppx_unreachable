@@ -27,6 +27,9 @@ clean:
 test: fmt
 	$(OPAM_EXEC) $(DUNE) runtest
 
+release: fmt test
+	$(OPAM_EXEC) dune-release bistro
+
 testf: fmt
 	$(OPAM_EXEC) $(DUNE) runtest -f
 
