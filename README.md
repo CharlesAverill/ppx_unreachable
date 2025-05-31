@@ -2,6 +2,10 @@
 
 A PPX that denotes unreachable code and prints descriptive errors when the code is reached
 
+## Install
+
+```opam install ppx_unreachable```
+
 ## Example
 
 Obviously, this is a case where unreachable is not applicable, however the applicable cases are not demonstratable.
