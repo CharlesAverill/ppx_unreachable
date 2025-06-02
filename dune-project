@@ -17,7 +17,7 @@
 
 (package
  (name ppx_unreachable)
- (synopsis "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
+ (synopsis "A tool for denoting unreachable control flow paths")
  (description "A PPX that denotes unreachable code and prints descriptive errors when the code is reached")
  (depends 
 	ocaml 
