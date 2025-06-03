@@ -23,5 +23,14 @@ let test_if x =
   else
     [%unreachable]
 
-let () = test_if 5 (* unreachable branch hit - test.ml:7 *)
+let test_if_msg x =
+  if x > 10 then
+    "big"
+  else if x < 0 then
+    "small"
+  else
+    [%unreachable_msg "0 <= x <= 10"]
+
+let () = test_if 5 (* unreachable branch hit - test.ml:13 *)
+let () = test_if_msg 5 (* unreachable branch hit - 0 <= x <= 10 *)
 ```
